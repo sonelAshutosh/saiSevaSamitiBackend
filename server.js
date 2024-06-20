@@ -4,6 +4,7 @@ import express from 'express'
 import mongoose from 'mongoose'
 import bodyParser from 'body-parser'
 import cookieParser from 'cookie-parser'
+import userRouter from './routing/userRoutes.js'
 
 const app = express()
 dotenv.config()
@@ -21,11 +22,10 @@ app.use(cookieParser())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-app.get('/', (req, res) => {
-  return res.json({
-    message: 'Hello World',
-  })
-})
+// ----------------------------------------------------------------
+// Routes
+// ----------------------------------------------------------------
+app.use('/users', userRouter)
 
 // ----------------------------------------------------------------
 // Database Connection
