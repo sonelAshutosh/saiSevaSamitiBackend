@@ -7,6 +7,11 @@ import cookieParser from 'cookie-parser'
 import userRouter from './routing/userRoutes.js'
 import activitiesNumberRouter from './routing/activitiesNumberRoutes.js'
 import volunteersRouter from './routing/volunteersRoutes.js'
+import newsletterRouter from './routing/newsletterRoutes.js'
+import campaignsRouter from './routing/campaignRouters.js'
+import galleryRouter from './routing/galleryRouters.js'
+import certificateRouter from './routing/certificateRouters.js'
+import memberRouter from './routing/memberRoutes.js'
 
 const app = express()
 dotenv.config()
@@ -30,6 +35,11 @@ app.use(bodyParser.json())
 app.use('/users', userRouter)
 app.use('/activitiesNumber', activitiesNumberRouter)
 app.use('/volunteers', volunteersRouter)
+app.use('/newsletter', newsletterRouter)
+app.use('/campaigns', campaignsRouter)
+app.use('/gallery', galleryRouter)
+app.use('/certificates', certificateRouter)
+app.use('/members', memberRouter)
 
 // ----------------------------------------------------------------
 // Database Connection
