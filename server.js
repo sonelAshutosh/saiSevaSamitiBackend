@@ -5,6 +5,8 @@ import mongoose from 'mongoose'
 import bodyParser from 'body-parser'
 import cookieParser from 'cookie-parser'
 import userRouter from './routing/userRoutes.js'
+import activitiesNumberRouter from './routing/activitiesNumberRoutes.js'
+import volunteersRouter from './routing/volunteersRoutes.js'
 
 const app = express()
 dotenv.config()
@@ -26,6 +28,8 @@ app.use(bodyParser.json())
 // Routes
 // ----------------------------------------------------------------
 app.use('/users', userRouter)
+app.use('/activitiesNumber', activitiesNumberRouter)
+app.use('/volunteers', volunteersRouter)
 
 // ----------------------------------------------------------------
 // Database Connection
