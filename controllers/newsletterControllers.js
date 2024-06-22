@@ -3,7 +3,7 @@ import Newsletter from '../models/NewsLetter.js'
 export const getAllNewsletterSubscribers = async (req, res) => {
   try {
     const subscribers = await Newsletter.find()
-    res.status(200).json(subscribers)
+    res.status(200).json({ subscribers })
   } catch (error) {
     res.status(404).json({ message: error.message })
   }

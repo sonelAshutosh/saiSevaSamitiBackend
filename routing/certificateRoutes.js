@@ -1,8 +1,14 @@
 import { Router } from 'express'
-import { getAllCertificates } from '../controllers/certificateControllers.js'
+import {
+  createCertificate,
+  deleteCertificate,
+  getAllCertificates,
+} from '../controllers/certificateControllers.js'
 
 const certificateRouter = Router()
 
 certificateRouter.get('/', getAllCertificates)
+certificateRouter.post('/', createCertificate)
+certificateRouter.delete('/:id', deleteCertificate)
 
 export default certificateRouter

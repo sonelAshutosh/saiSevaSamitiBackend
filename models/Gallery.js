@@ -1,6 +1,6 @@
 import mongoose, { model } from 'mongoose'
 
-const gallarySchema = new mongoose.Schema({
+const gallerySchema = new mongoose.Schema({
   imgTitle: {
     type: String,
     required: true,
@@ -19,4 +19,4 @@ const gallarySchema = new mongoose.Schema({
   },
 })
 
-export default mongoose.models.Gallary || model('Gallary', gallarySchema)
+export default mongoose.models.Gallery || model('Gallery', gallerySchema)
