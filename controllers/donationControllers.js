@@ -43,3 +43,14 @@ export const createDonator = async (req, res) => {
     res.status(404).json({ message: 'Error Occoured' })
   }
 }
+
+export const updateDonator = async (req, res) => {
+  const { id } = req.params
+  const { isVerified } = req.body
+  try {
+    const donator = await Donator.findByIdAndUpdate(id, { isVerified })
+    res.status(200).json({ donator })
+  } catch (error) {
+    res.status(404).json({ message: 'Error Occoured' })
+  }
+}
