@@ -22,6 +22,7 @@ const volunteersSchema = new mongoose.Schema({
   },
   image: {
     type: String,
+    default: '',
   },
   dateOfBirth: {
     type: Date,
