@@ -9,6 +9,15 @@ export const getAllMembers = async (req, res) => {
   }
 }
 
+export const getTopThreeMembers = async (req, res) => {
+  try {
+    const members = await Members.find().sort({ priority: 1 }).limit(3)
+    res.status(200).json({ members })
+  } catch (error) {
+    res.status(404).json({ message: 'Error Occoured' })
+  }
+}
+
 export const createMember = async (req, res) => {
   const {
     name,
